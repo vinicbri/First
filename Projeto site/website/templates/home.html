@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Notes</h1>
+<ul class="list-group" id="notes">
+    {% for note in user.notes %}
+    <li class="list-group-item">{{ note.data }}
+    </li>
+    {% endfor %}
+  </ul>
+
+    <form method="post">
+        <textarea name="note"
+        id="note"
+        class="form-contrl">
+    </textarea>
+    <div>
+        <button
+        style="text-align: center;"
+        type="submit"
+        class="btn-primary"
+        >Add note</button>
+    </div>
+
+    </form>
+
+{% endblock %}
